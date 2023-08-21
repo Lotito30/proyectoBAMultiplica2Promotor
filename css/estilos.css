@@ -1,0 +1,547 @@
+/* Explicacion breve de las propiedas de CSS usadas para darle estilo a la pagina web
+
+:root: Se utiliza comúnmente para definir variables CSS globales.
+
+--variable: Esta es la sintaxis para definir una variable CSS. Las variables se utilizan para almacenar valores que se pueden reutilizar en todo el documento. Por ejemplo, podrías definir una variable para el color principal de tu sitio web y utilizarla en varios lugares en tu hoja de estilo.
+
+*: Este es el selector universal, que selecciona todos los elementos en el documento.
+
+width: Esta propiedad especifica el ancho de un elemento que puede ser expresado en px, rem, em, % y vw.
+
+height: Esta propiedad especifica la altura de un elemento que puede ser expresadoen px, rem, em, % y vh.
+
+box-sizing: Esta propiedad define cómo se calculan el ancho y la altura de un elemento, incluyendo o excluyendo el relleno y el borde del elemento.
+
+text-shadow: Esta propiedad agrega una sombra a un texto. con la sintaxis por ejemplo '1px 1px 5px #000'
+
+margin: Esta propiedad especifica el margen exterior de un elemento, que es el espacio entre el borde del elemento y el siguiente elemento adyacente.
+
+padding: Esta propiedad especifica el relleno interior de un elemento, que es el espacio entre el contenido del elemento y su borde.
+
+font-weight: Esta propiedad especifica el grosor del texto.
+
+font-family: Esta propiedad especifica la familia tipográfica utilizada para el texto.
+
+color: Esta propiedad especifica el color del texto.
+
+list-style: Esta propiedad especifica el estilo de los marcadores de una lista. Se puede dar el valor de none para que no aparezcan las viñetas
+
+text-decoration: Esta propiedad especifica la decoración del texto, como subrayado o tachado.
+
+#id: Este es un selector de ID, que selecciona un elemento con un ID específico. Los ID deben ser únicos en todo el documento.
+
+.class: Este es un selector de clase, que selecciona todos los elementos con una clase específica.
+
+cursor: Esta propiedad especifica el tipo de cursor que se muestra cuando el usuario mueve el cursor sobre un elemento.
+
+display: Esta propiedad especifica cómo se muestra un elemento en la página. Los valores comunes incluyen block, que muestra el elemento como un bloque, y flex, que muestra el elemento como un contenedor flexible.
+
+flex-direction: Esta propiedad especifica la dirección en la que se colocan los elementos flexibles dentro de un contenedor flexible.
+
+justify-content: Esta propiedad alinea los elementos flexibles a lo largo del eje principal dentro de un contenedor flexible.
+
+align-items: Esta propiedad alinea los elementos flexibles a lo largo del eje transversal dentro de un contenedor flexible.
+
+position: Esta propiedad especifica cómo se posiciona un elemento en relación con su posición normal o con su contenedor. Los valores comunes incluyen fixed, que posiciona el elemento en relación con la ventana del navegador, y absolute, que posiciona el elemento en relación con su contenedor más cercano con posición establecida.
+
+z-index: Esta propiedad especifica el orden de apilamiento de un elemento posicionado en relación con otros elementos posicionados.
+
+transform: Esta propiedad aplica una transformación 2D o 3D a un elemento, como rotar o escalar el elemento.
+
+font-size: Esta propiedad especifica el tamaño del texto.
+
+background-image: Esta propiedad especifica la imagen de fondo de un elemento.
+
+background-size: Esta propiedad especifica el tamaño de la imagen de fondo de un elemento
+
+border: Esta propiedad especifica el borde de un elemento. Puedes definir el ancho, el estilo y el color del borde utilizando las propiedades border-width, border-style y border-color, respectivamente o usando los 3 elementos en lapropiedad border por ejemplo 1px solid #000
+
+border-radius: Esta propiedad se utiliza para redondear las esquinas de un elemento. Puedes especificar un valor en píxeles o en porcentaje para redondear las esquinas.
+
+gap: Esta propiedad define el espacio entre los elementos en un contenedor flexible o en una cuadrícula. Puedes especificar un valor en píxeles o en cualquier otra unidad de medida para definir el tamaño del espacio.
+
+object-fit: Esta propiedad especifica cómo se ajusta el contenido de un elemento <img> dentro de su contenedor. Los valores comunes incluyen fill, que estira el contenido para llenar el contenedor, contain, que ajusta el tamaño del contenido para que se ajuste dentro del contenedor manteniendo su relación de aspecto, y cover, que ajusta el tamaño del contenido para cubrir completamente el contenedor manteniendo su relación de aspecto.
+
+overflow: Esta propiedad especifica qué sucede cuando el contenido de un elemento es demasiado grande para caber en su contenedor. Los valores comunes incluyen visible, que muestra el contenido fuera del contenedor, hidden, que oculta el contenido que se desborda, y scroll, que agrega barras de desplazamiento para permitir al usuario desplazarse por el contenido.
+
+text-transform: Esta propiedad controla la capitalización del texto. Los valores comunes incluyen uppercase, que convierte todo el texto a mayúsculas, lowercase, que lo convierte a minúsculas, y capitalize, que convierte la primera letra de cada palabra a mayúsculas.
+
+background: linear-gradient: Esta propiedad se utiliza para crear un fondo con un gradiente lineal. Puedes especificar la dirección del gradiente y los colores que se utilizarán para crear una transición suave entre ellos. background:linear-gradient(90deg, #fff,#000)
+
+*/
+
+:root{
+    --color-gris:#737373;
+    --color-purpura:#B48FFF;
+    --color-melocoton:#FFDAB9;
+    --box-shadow:0px 0px 10px #737373;
+    --border:1px solid #737373;
+    --lato:'Lato',sans-serif;
+    --roboto:'Roboto', sans-serif;
+    --text-shadow:0px 0px 10px #d7d7d7;
+}
+*{
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: var(--color-gris);
+    text-transform: capitalize;
+    font-weight: 900;
+}
+hr{
+    width: 70%;
+    margin: 0 auto;
+}
+button{
+    cursor: pointer;
+}
+body{
+    font-size:18px;
+    width: 100%;
+    background-color: rgba(200, 162, 200, 0.2);
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px; 
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
+}
+header ul{
+    text-align: end;
+}
+header ul li{
+    display: inline-block;
+    margin: 10px;
+    color: var(--color-gris);
+    font-size: 16px;
+    font-weight: 900;
+    font-family: var(--roboto);
+}
+
+header ul li a:hover{
+    transform: scale(1.1);
+    color: #000;
+}
+.btn{
+    background-color: var(--color-melocoton);
+    border-color:var(--color-gris);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    width: 150px;   
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.home .fondo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home .logoMain{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    width: 600px;
+    height: 350px;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(20px);
+    border: var(--border);
+    border-radius: 10px;
+}
+section{
+    margin: 12px 0;
+}
+.contenedor{
+    position: relative;
+    width: 95%;
+    margin: 50px auto;
+    height: 100vh;
+    text-align: center;
+    padding: 10px;
+}
+.titulo,
+.subtitulo{
+    margin: 5px;
+    text-shadow:2px 2px 1px #d7d7d7;
+}
+.titulo{
+    font-size: 42px;
+    font-family: var(--lato);   
+}
+.subtitulo{
+    font-size: 20px;
+    font-family: var(--roboto);   
+}
+/* TRATAMIENTOS */
+#tratamientos .contenedor{
+    background-image: url("/img/fondomainparedrosa.avif");
+    background-size: 100% 10%;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 36px;
+    width: 80%;
+}
+#tratamientos .contenedor div{
+    margin-top: 20px;
+}
+.terapias{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    gap: 25px;
+}
+.cuadroTerapia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 30%;
+    height: 150px;
+    font-family: var(--roboto);
+}
+.cuadroTerapia p{
+    width: 200px;
+    text-shadow:var(--text-shadow);
+    font-size: 20px;
+}
+.terapia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-purpura);
+    border-radius: 25%;
+    box-shadow: var(--box-shadow);
+    border: var(--border);  
+}
+.terapia i{
+    border: 5px solid #fff;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 40px;
+    color: var(--color-melocoton);
+    
+}
+.terapia:hover{
+    transform: scale(1.1);
+}
+
+/* ACERCA DE */
+
+#acercade .contenedor{
+    border-bottom: var(--border);
+    border-top: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#acercade .contenedorContenido{
+    width: 490px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    margin-right: 20px;
+}
+#acercade .contenedorContenido h1{
+    font-size: 58px;
+    font-family: var(--lato);
+    text-shadow: 2px 2px 2px var(--color-purpura);
+}
+#acercade .contenedorContenido h2{
+    font-size: 20px;
+    margin-top: 15px;
+    font-family: var(--roboto);
+}
+#acercade .contenedor img{
+    width: 650px;
+    border-radius: 40%; 
+}
+
+/* EXPERIENCIAS */
+#experiencias .contenedor{
+    background: linear-gradient(90deg, var(--color-melocoton),var(--color-purpura));
+    border-radius: 10px;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#experiencias .contenedorContenido{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+    margin-top: 15px;
+    background-image: url("/img/fondomainenredaderaenpared.avif");
+    background-position: 100% 10%;
+    padding: 25px;
+    border-radius: 10px;
+    height: 550px;
+    
+}
+.experiencia{   
+    width:250px;
+    height: 450px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow); 
+    background-color: white;  
+}
+.experiencia .circuloFotoPerfil{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border: var(--border);
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    background:linear-gradient(var(--color-melocoton),var(--color-purpura));
+}
+.experiencia .fotoPerfil{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.estrellas{
+    text-align: left;
+
+    margin-top: 10px;
+}
+.estrellas img{
+    width: 40px;
+    margin-right: -15px;
+}
+.experiencia h3{
+    text-align: left;
+    margin-left: 10px;
+}
+.experiencia p{
+    width: 220px;
+    margin: 12px auto;
+    font-family: var(--roboto);
+}
+/* NEWSLETTER */
+#newsletter .contenedor{
+    height: 50%; 
+}
+#newsletter h1{
+    font-size: 32px;
+    margin-bottom: 50px;
+
+}
+#newsletter .contenedorContenido{
+    height: 200px;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-image: url("/img/fondomainbosque.avif");
+    background-position: 100% 50%;
+    background-size: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+#formNews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#formNews label{
+    font-size: 26px;
+    color: var(--color-melocoton);
+    font-family: var(--roboto);
+}
+#formNews input{
+    border: var(--border);
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+}
+#formNews input::placeholder{
+    font-family: var(--roboto);
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* CONTACTO */
+
+#contacto .contenedorContenido{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+   
+}
+#formContacto{
+    margin-top: 25px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    background-color: var(--color-purpura);
+    font-family: var(--roboto);
+}
+#formContacto label{
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+#formContacto input,
+#formContacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: var(--border);
+  border-radius: 10px;
+}
+#formContacto button{
+    margin-top: 15px;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: var(--color-gris);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.izquierda{
+    width: 25%;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+.derecha{
+    width: 25%;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+.iconos-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding-top: 20px;
+
+}
+.sigueme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
+    box-shadow:var(--box-shadow);
+}
+.fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 100%;
+    color: #ffffff;
+}
+.fa-instagram {
+    background: linear-gradient(
+      to top right,
+      #fcde30,
+      #e9712a,
+      #d2313b,
+      #ae4198,
+      #7540a1,
+      #5443a8
+    ); 
+}
+.fa-facebook {
+    background: #1e4595;  
+}
+.fa-facebook:hover {
+    background: #0655f3;
+}
+.fa-twitter{
+    background: linear-gradient(to right top, #42a9ec, #358de6); 
+}
+.fa-twitter:hover,
+.fa-facebook:hover,
+.fa-instagram:hover {
+    color: #000;
+}
+
+footer p{
+    color:black;
+}
+footer .titulo{
+    background-color: white;
+    width: max-content;
+    margin: 50px auto 10px;
+    border-radius: 10px;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    color: var(--color-purpura);
+}
+footer .derechos{
+    margin-bottom: 25px;
+}
+.navegacion a{
+    display:inline-block;
+    color: var(--color-melocoton);
+    text-decoration: underline;
+    font-family: var(--roboto);
+    margin: 50px 15px 0 15px;
+}
+
+.navegacion a:hover{
+    transform: scale(1.1);
+}
+.metododepago{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: white;
+    width: 210px;
+    height: 70px;   
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.metododepago img{
+    width: 150px;
+    margin: -30px;
+}

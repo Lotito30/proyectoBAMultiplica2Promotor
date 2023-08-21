@@ -1,22 +1,332 @@
+<!-- Explicacion breve de las etiquetas HTML usadas para estructurar la pagina web
+<!DOCTYPE html> es una declaración que se utiliza para especificar la versión de html utilizada, esta etiqueta debe ser la primera línea de un documento html para asegurarse de que se muestren correctamente en todos los navegadores.
+
+<html> es la etiqueta raíz de un documento HTML y define el alcance del documento. Todos los demás elementos de la página deben estar dentro de esta etiqueta.
+
+<head> se utiliza para contener información sobre el documento que no se muestra en la página, como los metadatos, los enlaces a hojas de estilo y los scripts. Esta etiqueta debe estar dentro de la etiqueta <html> y antes de la etiqueta <body>
+
+<meta> se utiliza para proporcionar metadatos sobre el documento, <meta charset="UTF-8"> especifica que el documento está codificado en UTF-8, que es un formato de codificación de caracteres comúnmente utilizado.
+
+<link> se utiliza para enlazar recursos externos al documento, como hojas de estilo y fuentes. 
+
+<title> se utiliza para especificar el título del documento, que se muestra en la pestaña del navegador y en los resultados de búsqueda. Debe estar dentro de head
+
+<header>: Representa un contenedor que por lo general, contiene el logotipo y la navegación principal de un sitio web. 
+
+<img>: Se utiliza para introducir una imagen en la nuestra página. El atributo 'src' especifica la url de la imagen que se mostrara y el atributo 'alt' proporciona texto alternativo para la imagen si no se puede mostrar
+
+<ul>: Representa una lista desordenada. Se utiliza para agrupar un conjunto de elementos relacionados en una lista.
+
+<li>: se utiliza para definir un elemento de lista. Por lo general, se usa dentro de una lista desordenada (<ul>) o una lista ordenada (<ol>) para representar cada elemento de la lista. El contenido del elemento <li> puede ser texto, imágenes, enlaces u otros elementos html.
+
+<a href="">: Se utiliza para crear un enlace a otra página web, un archivo, una ubicación en la misma pagina o cualquier otra url. El atributo href especifica la url del recurso al que apunta el enlace.
+
+<main>: Representa el contenido principal de un documento o aplicación. Solo debe haber un elemento (<main>) por página y debe ser único para el documento
+
+<section>: Representa una sección independiente de un documento, como un capítulo, una pestaña de contenido o una pestaña de navegación. Cada (<section>) debe tener un encabezado que describa su tema y puede contener varios elementos relacionados.
+
+<div>: Se utiliza para crear un contenedor genérico para contenido de flujo. No tiene un significado semántico en sí mismo, pero puede ser útil para agrupar elementos para fines de estilo
+
+<h1> hasta <h6>: Se utilizan para definir los títulos y subtítulos de una página web, siendo h1 el nivel más alto y h6 el más bajo.
+
+<i>: Se utiliza para representar texto en cursiva. Es usado para introducir iconos FontAwesome
+
+<p>: Se utiliza para representar un párrafo de texto
+
+<hr> Se representa visualmente como una línea horizontal y se utiliza para separar el contenido en una página.
+
+<form> Se utiliza para crear un formulario para ingresar información. El valor get indica que los datos del formulario se enviarán como parte de la url en una solicitud GET.
+Dentro de un formulario, se pueden utilizar varias etiquetas para crear diferentes tipos de campos de entrada.
+
+<label> se utiliza para agregar una etiqueta descriptiva a un campo de entrada
+
+<input> se utiliza para crear el campo de entrada en sí
+El atributo type de la etiqueta <input> el valor email indica que se creará un campo de entrada para direcciones de correo electrónico.
+
+<button> se utiliza para crear un botón en un formulario, el valor submit indica que el botón enviará el formulario al servidor cuando se haga clic en él
+
+<footer> representa el pie de página de un documento o sección. Contiene informacion sobre el autor, enlaces a documentos relacionados y derechos de autor.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css">
-    <title>Dra.Andrea Morales - Psicologa</title>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;900&family=Roboto:wght@100;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <!-- FONTAWESOME ICONOS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <title>Dra. Andrea Morales - Psicologa</title>
+  </head>
 
-</head>
-<body>
+  <body>
+    
     <header>
-        <img src="/KitTema5/5-logo-negro.png" alt="Logo Doctora Morales" />
+      
+      <img
+        src="img/cerebroicono.png"
+        alt="Logo Doctora Morales"
+         width="100"
+      />      
+      <ul>
+        <li><a href="#tratamientos">Tratamientos</a></li>
+        <li><a href="#acercade">Acerca de</a></li>
+        <li><a href="#experiencias">Experiencias</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#" class="btn">Iniciar Sesion</a></li>
+        <li><a href="#" class="btn">Registrarse</a></li>
+      </ul>
     </header>
+
     <main>
-
+      <section class="home">
+        <img
+          src="img/KitTema5/5-logo-negro.png"
+          alt="Logo Doctora Morales"
+          class="logoMain"
+        />
+        <img
+          src="./img/fondomainescritorio.avif"
+          alt="imagen de fondo"
+          class="fondo"
+        />
+      </section>
     </main>
+    <section id="tratamientos">
+      
+      <div class="contenedor">
+        <div>
+          <h1 class="titulo">explora nuestros tratamientos</h1>
+          <h4 class="subtitulo">sientete acompañad@ en todo momento</h4>
+        </div>
+        <hr />
+        <div class="terapias">
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              
+              <i class="fas fa-brain"></i>
+            </a>
+            
+            <p>Terapia Cognitiva</p>
+          </div>
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              <i class="fas fa-heartbeat"></i>
+            </a>
+            <p>Terapia de Apoyo Emocional</p>
+          </div>
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              <i class="fas fa-smile"></i>
+            </a>
+            <p>Terapia de Relajación y Consciencia</p>
+          </div>
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              <i class="fas fa-hand-holding-heart"></i>
+            </a>
+            <p>Terapia de Relaciones Interpersonales</p>
+          </div>
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              <i class="fas fa-balance-scale"></i>
+            </a>
+            <p>Terapia de Equilibrio Emocional</p>
+          </div>
+          <div class="cuadroTerapia">
+            <a href="#" class="terapia">
+              <i class="fas fa-users"></i>
+            </a>
+            <p>Terapia de Grupo y Comunidad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="acercade">
+      <div class="contenedor">
+        <div class="contenedorContenido">
+          <div>
+            <h1>Dra. Andrea Morales</h1>
+            <hr />
+            <h2>
+              Psicóloga apasionada y comprometida con guiar a las personas hacia
+              una vida más plena y equilibrada. Su enfoque empático y
+              experiencia te guiarán en tu camino hacia el bienestar.
+            </h2>
+          </div>
+          <a href="#" class="btn">ver más</a>
+        </div>
+        <img src="/img/modelodra.avif" alt="modelo de la pagina" />
+      </div>
+    </section>
+    <section id="experiencias">
+      <div class="contenedor">
+        <div>
+          <h1 class="titulo">experiencas</h1>
+          <h4 class="subtitulo">compartiendo historias</h4>
+        </div>
+        <hr />
+        <div class="contenedorContenido">
+          <div class="experiencia">
+            <div class="circuloFotoPerfil">
+              <img
+                src="./img/experiencia3.png"
+                alt="foto persona dando experiencia"
+                class="fotoPerfil"
+              />
+            </div>
+            <h3>Alicia rodriguez, buenos aires</h3>
+            <div class="estrellas">
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+            </div>
+            <p>
+              “La terapia de pareja nos trajo claridad en el caos. Con la Dra.
+              Andrea Morales, sentimos hablar con una amiga sabia, fortaleciendo
+              nuestra relación.”
+            </p>
+          </div>
+          <div class="experiencia">
+            <div class="circuloFotoPerfil">
+              <img
+                src="./img/experiencia1.png"
+                alt="foto persona dando experiencia"
+                class="fotoPerfil"
+              />
+            </div>
+            <h3>gustavo gonzalez, belgrano</h3>
+            <div class="estrellas">
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+            </div>
+            <p>
+              "Pensé que era escéptico, pero la Dra. Andrea Morales me hizo
+              cambiar de opinión. Realmente sabe cómo conectar."
+            </p>
+          </div>
+          <div class="experiencia">
+            <div class="circuloFotoPerfil">
+              <img
+                src="./img/experiencia2.png"
+                alt="foto persona dando experiencia"
+                class="fotoPerfil"
+              />
+            </div>
+            <h3>andrés morales, villa devoto</h3>
+            <div class="estrellas">
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+              <img src="./img/estrella.png" alt="estrellas de calificacion" />
+            </div>
+            <p>
+              "¡Increíble experiencia! Dra. Andrea Morales es como ese consejero
+              amigo que todos necesitamos. Me escuchó de verdad."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="newsletter">
+      <div class="contenedor">
+        <h1 class="titulo">
+          ¡suscríbete para estar al tanto de las últimas novedades!
+        </h1>
+        <div class="contenedorContenido">
+          <form action="" method="get" id="formNews">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="ingresa tu email" />
+            <button type="submit" class="btn">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="contacto">
+      <div class="contenedor">
+        <h1 class="titulo">Contactame</h1>
+        <h3 class="subtitulo">estoy aqui para ti</h3>
+        <div class="contenedorContenido">
+          <form action="" method="get" id="formContacto">
+            <label for="nombre">nombre</label>
+            <input type="text" id="nombre" />
+            <label for="asunto">asunto</label>
+            <input type="text" id="asunto" />
+            <label for="emaill">email</label>
+            <input type="email" id="emaill" />
+            <label for="mensaje">mensaje</label>
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button type="submit" class="btn">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
     <footer>
-
+      <hr class="izquierda" />
+      <div class="iconos-footer">
+        <div class="sigueme">
+          <a href="http://www.instagram.com/jesuslotito" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <p>instagram</p>
+        </div>
+        <div class="sigueme">
+          <a href="http://www.facebook.com/jesus.dominguez.5439" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <p>facebook</p>
+        </div>
+        <div class="sigueme">
+          <a href="http://www.twitter.com/dominguezj21" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <p>twitter</p>
+        </div>
+      </div>
+      <hr class="derecha" />
+      <div class="navegacion">
+        <a href="#">tratamientos</a>
+        <a href="#">experiencias</a>
+        <a href="#">acerca de</a>
+        <a href="#">contacto</a>
+      </div>
+      <h1 class="titulo">dra. andrea morales</h1>
+      <p class="derechos">
+        © dra. andrea morales 2023. Todos los derechos reservados
+      </p>
+      <p>
+        Dirección: La rioja, No. 1300, CABA <br />Teléfono: 11-12345678 <br />
+        Correo Electrónico: info@andreamorales.com
+      </p>
+      <p>
+        Lunes - Viernes: 9:00 AM - 6:00 PM <br />
+        Sábados: 10:00 AM - 2:00 PM
+      </p>
+      <div class="metododepago">
+        <img src="./img/metoddepagotodos.png" alt="metodos de pago" />
+        <img src="./img/metoddepagomp.png" alt="metodo de pago mp" />
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
