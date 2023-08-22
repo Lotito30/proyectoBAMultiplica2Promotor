@@ -186,7 +186,7 @@ section{
 }
 /* TRATAMIENTOS */
 #tratamientos .contenedor{
-    background-image: url("/img/fondomainparedrosa.avif");
+    background-image: url("../img/fondomainparedrosa.avif");
     background-size: 100% 10%;
     border: var(--border);
     border-radius: 10px;
@@ -295,7 +295,7 @@ section{
     justify-content: space-evenly;
     align-items: center;  
     margin-top: 15px;
-    background-image: url("./img/fondomainenredaderaenpared.avif");
+    background-image: url("../img/fondomainenredaderaenpared.avif");
     background-position: 100% 10%;
     padding: 25px;
     border-radius: 10px;
@@ -360,7 +360,7 @@ section{
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    background-image: url("./img/fondomainbosque.avif");
+    background-image: url("../img/fondomainbosque.avif");
     background-position: 100% 50%;
     background-size: 100%;
     object-fit: contain;
