@@ -59,6 +59,7 @@ El atributo type de la etiqueta <input> el valor email indica que se creará un 
       href="https://fonts.googleapis.com/css2?family=Lato:wght@100;900&family=Roboto:wght@100;900&display=swap"
       rel="stylesheet"
     />
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/estilos.css" />
     <!-- FONTAWESOME ICONOS -->
     <link
@@ -68,55 +69,83 @@ El atributo type de la etiqueta <input> el valor email indica que se creará un 
     />
     <title>Dra. Andrea Morales - Psicologa</title>
   </head>
-
   <body>
-    
     <header>
-      
       <img
         src="./img/cerebroicono.png"
         alt="Logo Doctora Morales"
-         width="100"
-      />      
-      <ul>
-        <li><a href="#tratamientos">Tratamientos</a></li>
-        <li><a href="#acercade">Acerca de</a></li>
-        <li><a href="#experiencias">Experiencias</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#" class="btn">Iniciar Sesion</a></li>
-        <li><a href="#" class="btn">Registrarse</a></li>
-      </ul>
+        width="100" class="logo"
+      />
+      <div class="displayFlex diaNoche">
+        <p>Dia/Noche</p>
+        <div class="contenedorBtn">
+          <div class="btnDiaNoche"></div>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#tratamientos">Tratamientos</a></li>
+          <li><a href="#acercade">Acerca de</a></li>
+          <li><a href="#experiencias">Experiencias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#" class="btn">Iniciar Sesion</a></li>
+          <li><a href="#" class="btn">Registrarse</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <main>
-      <section class="home">
-        <img
-          src="./img/KitTema5/5-logo-negro.png"
-          alt="Logo Doctora Morales"
-          class="logoMain"
-        />
-        <img
-          src="./img/fondomainescritorio.avif"
-          alt="imagen de fondo"
-          class="fondo"
-        />
-      </section>
-    </main>
+    <section id="home" class="displayFlex">
+      <div class="carrusel">
+        <div class="wrapper">
+          <div class="descuento carruselImg displayFlex">
+            <img
+              src="./img/bannerdescuento.png"
+              alt="banner descuento del 30%"
+              class="logoMain"
+            />
+            <a href="#" class="btn">Ver Más</a>
+            <div class="contador displayFlex">
+              <div class="tiempo bordeShadow" id="dias">00</div>
+              <div class="tiempo bordeShadow" id="horas">00</div>
+              <div class="tiempo bordeShadow" id="minutos">00</div>
+              <div class="tiempo bordeShadow" id="segundos">00</div>
+            </div>
+          </div>
+          <div class="carruselImg displayFlex">
+            <img
+              src="./img/KitTema5/5-logo-negro.png"
+              alt="Logo Doctora Morales"
+              class="logoMain"
+            />
+          </div>
+          <div class="carruselImg displayFlex">
+            <img
+              src="./img/bannermuypronto.png"
+              alt="banner muy pronto con nuevos anuncios"
+              class="logoMain"
+            />
+          </div>
+        </div>
+        <i class="fas fa-arrow-left fa-2x fa-arrow bordeShadow"></i>
+        <i class="fas fa-arrow-right fa-2x fa-arrow bordeShadow"></i>
+      </div>
+      <img
+        src="./img/fondomainescritorio.avif"
+        alt="imagen de fondo"
+        class="fondo"
+      />
+    </section>
     <section id="tratamientos">
-      
-      <div class="contenedor">
+      <div class="contenedor bordeShadow displayFlex">
         <div>
           <h1 class="titulo">explora nuestros tratamientos</h1>
           <h4 class="subtitulo">sientete acompañad@ en todo momento</h4>
         </div>
         <hr />
-        <div class="terapias">
+        <div class="terapias bordeShadow displayFlex">
           <div class="cuadroTerapia">
             <a href="#" class="terapia">
-              
               <i class="fas fa-brain"></i>
             </a>
-            
             <p>Terapia Cognitiva</p>
           </div>
           <div class="cuadroTerapia">
@@ -154,7 +183,7 @@ El atributo type de la etiqueta <input> el valor email indica que se creará un 
     </section>
     <section id="acercade">
       <div class="contenedor">
-        <div class="contenedorContenido">
+        <div class="contenedorContenido ">
           <div>
             <h1>Dra. Andrea Morales</h1>
             <hr />
@@ -250,83 +279,112 @@ El atributo type de la etiqueta <input> el valor email indica que se creará un 
           ¡suscríbete para estar al tanto de las últimas novedades!
         </h1>
         <div class="contenedorContenido">
-          <form action="" method="get" id="formNews">
+          <form action="" method="get" id="formNews" class="displayFlex">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="ingresa tu email" />
-            <button type="submit" class="btn">Enviar</button>
+            <input type="email" id="email" name="email" placeholder="ingresa tu email" />
+            <button type="submit" class="btn" id="enviar">Enviar</button>
           </form>
         </div>
       </div>
+    </section>
+    <section id="mapa" class="displayFlex">
+        <h1 class="titulo">Ubicación</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.1964891620655!2d-58.409518624404924!3d-34.6244745585945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccafd5c83aa27%3A0xef5425f585498124!2sLa%20Rioja%201200%2C%20C1221ACN%20CABA!5e0!3m2!1ses-419!2sar!4v1693178291061!5m2!1ses-419!2sar"
+          width="70%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading=""
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
     </section>
     <section id="contacto">
       <div class="contenedor">
         <h1 class="titulo">Contactame</h1>
-        <h3 class="subtitulo">estoy aqui para ti</h3>
-        <div class="contenedorContenido">
-          <form action="" method="get" id="formContacto">
+        <div class="contenedorContenido displayFlex">
+          <form action="" method="get" id="formContacto" class="bordeShadow">
             <label for="nombre">nombre</label>
-            <input type="text" id="nombre" />
+            <input type="text" id="nombre"  name="nombre"/>
             <label for="asunto">asunto</label>
-            <input type="text" id="asunto" />
+            <input type="text" id="asunto"  name="asunto"/>
             <label for="emaill">email</label>
-            <input type="email" id="emaill" />
+            <input type="email" id="emaill"  name="emaill"/>
             <label for="mensaje">mensaje</label>
             <textarea
               name="mensaje"
-              id="mensaje"
+              id="mensaje" name="mensaje"
               cols="30"
               rows="10"
+              resize="none"
             ></textarea>
-            <button type="submit" class="btn">Enviar</button>
+            <button type="submit" class="btn" id="enviarContacto">Enviar</button>
           </form>
         </div>
       </div>
     </section>
+    <a href="#home" onclick="removerLink()"
+      ><i class="fas fa-arrow-up fa-2x fa-arrow bordeShadow"></i
+    ></a>
     <footer>
-      <hr class="izquierda" />
-      <div class="iconos-footer">
-        <div class="sigueme">
-          <a href="http://www.instagram.com/jesuslotito" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <p>instagram</p>
-        </div>
-        <div class="sigueme">
-          <a href="http://www.facebook.com/jesus.dominguez.5439" target="_blank"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <p>facebook</p>
-        </div>
-        <div class="sigueme">
-          <a href="http://www.twitter.com/dominguezj21" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <p>twitter</p>
+      <div class="rrss">
+        <div class="iconos-footer displayFlex">
+          <h3>Sigueme</h3>
+          <div class="sigueme">
+            <a href="http://www.instagram.com/jesuslotito" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <p>instagram</p>
+          </div>
+          <div class="sigueme">
+            <a
+              href="http://www.facebook.com/jesus.dominguez.5439"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <p>facebook</p>
+          </div>
+          <div class="sigueme">
+            <a href="http://www.twitter.com/dominguezj21" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <p>twitter</p>
+          </div>
         </div>
       </div>
-      <hr class="derecha" />
-      <div class="navegacion">
-        <a href="#">tratamientos</a>
-        <a href="#">experiencias</a>
-        <a href="#">acerca de</a>
-        <a href="#">contacto</a>
+      <div class="contactoFooter displayFlex">
+        <h1 class="titulo">dra. andrea morales</h1>
+        <p class="derechos">
+          © dra. andrea morales 2023. Todos los derechos reservados
+        </p>
+        <p>
+          Dirección: La rioja, No. 1200, CABA <br />Teléfono: 11-12345678 <br />
+          Correo Electrónico: info@andreamorales.com
+        </p>
+        <p>
+          Lunes - Viernes: 9:00 AM - 6:00 PM <br />
+          Sábados: 10:00 AM - 2:00 PM
+        </p>
+        <img src="./img/metoddepagotodos.png" class="bordeShadow" alt="metodos de pago" />
       </div>
-      <h1 class="titulo">dra. andrea morales</h1>
-      <p class="derechos">
-        © dra. andrea morales 2023. Todos los derechos reservados
-      </p>
-      <p>
-        Dirección: La rioja, No. 1300, CABA <br />Teléfono: 11-12345678 <br />
-        Correo Electrónico: info@andreamorales.com
-      </p>
-      <p>
-        Lunes - Viernes: 9:00 AM - 6:00 PM <br />
-        Sábados: 10:00 AM - 2:00 PM
-      </p>
-      <div class="metododepago">
-        <img src="./img/metoddepagotodos.png" alt="metodos de pago" />
-        <img src="./img/metoddepagomp.png" alt="metodo de pago mp" />
+      <div class="informacion">
+        <h3>Navegación</h3>
+        <a href="#tratamientos">tratamientos</a>
+        <a href="#experiencias">experiencias</a>
+        <a href="#acercade">acerca de</a>
+        <a href="#contacto">contacto</a>
+        <br>
+        <h3>Legales</h3>
+        <a href="">Política de Privacidad</a>
+        <a href="">Términos y Condiciones</a>
+        <a href="">Contacto Legal</a>
+        <a href="">Política de Cancelación</a>
       </div>
     </footer>
+    <div class="cargaContenedor displayFlex">
+      <img src="./img/KitTema5/5-logo-color.png" alt="logo de nuestra pagina">
+      <img src="./img/progress.gif" alt="cargando" width="120px">
+    </div>
+    <script src="./js/app.js"></script>
   </body>
 </html>

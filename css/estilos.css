@@ -86,9 +86,21 @@ background: linear-gradient: Esta propiedad se utiliza para crear un fondo con u
     padding: 0;
     margin: 0;
     text-decoration: none;
-    color: var(--color-gris);
     text-transform: capitalize;
     font-weight: 900;
+}
+.bordeShadow{
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+.displayFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    position: relative;
 }
 hr{
     width: 70%;
@@ -98,10 +110,16 @@ button{
     cursor: pointer;
 }
 body{
+    position: relative;
     font-size:18px;
     width: 100%;
     background-color: rgba(200, 162, 200, 0.2);
+    color: black;
 }
+section{
+    margin: 12px 0;
+}
+
 header{
     position: fixed;
     top: 0;
@@ -116,9 +134,35 @@ header{
     backdrop-filter: blur(10px);
     box-shadow: var(--box-shadow);
 }
-header ul{
-    text-align: end;
+.contenedorBtn {
+    width: 45px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
 }
+.diaNoche{
+    gap: 12px;
+}
+.btnDiaNoche {
+    width: 21px;
+    height: 21px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+.modoNoche .btnDiaNoche {
+    transform: translateX(20px);
+}
+body.modoNoche{
+    background-color: black;
+    color: var(--color-gris);
+}
+
 header ul li{
     display: inline-block;
     margin: 10px;
@@ -127,10 +171,16 @@ header ul li{
     font-weight: 900;
     font-family: var(--roboto);
 }
-
-header ul li a:hover{
-    transform: scale(1.1);
-    color: #000;
+header .nav  li a{
+    padding: 10px;
+    color: var(--color-gris);
+}
+header .nav li a.active,
+header .nav li a:hover{
+    color:#000;
+    background-color: var(--color-melocoton);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
 }
 .btn{
     background-color: var(--color-melocoton);
@@ -138,35 +188,98 @@ header ul li a:hover{
     border-radius: 5px;
     padding: 10px;
     box-shadow: var(--box-shadow);
-    width: 150px;   
+    width: 150px;
+    color: var(--color-gris);   
 }
 .btn:hover{
     transform: scale(1.1);
 }
-.home .fondo{
+#home{
+    position: relative;
+    height: 100vh;
+}
+#home .fondo{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;  
 }
-.home .logoMain{
+
+.carrusel{
+    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 70%;
     transform: translate(-50%,-45%);
-    width: 600px;
-    height: 350px;
     box-shadow: var(--box-shadow);
     backdrop-filter: blur(20px);
     border: var(--border);
-    border-radius: 10px;
+    
 }
-section{
-    margin: 12px 0;
+.carrusel a{
+    position: absolute;
+    top:60%;
+    left: 15%;
+    text-align: center;
 }
+.wrapper{
+    display: flex;
+    width: 100%; 
+}
+.wrapper .carruselImg{
+    flex: 0 0 100%;
+       
+}
+.wrapper .carruselImg img{
+    max-width: 100%;
+    height: 100%;
+}
+.carrusel .descuento{
+    position: relative;
+}
+.carrusel .contador{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 25px;
+    width: 150px;
+    gap: 12px;
+}
+.carrusel .contador .tiempo{
+    font-size: 30px;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--color-melocoton);
+}
+.fa-arrow{
+    color: var(--color-gris);
+    padding: 10px;
+    background-color: var(--color-melocoton);
+    z-index: 2;
+}
+.fa-arrow:hover{
+    transform: scale(1.1);
+}
+.fa-arrow-right{
+    position: absolute;
+    top: 50%;
+    right: 0; 
+    cursor: pointer;
+    margin-right:12px ;   
+}
+.fa-arrow-left{
+    position: absolute;
+    top:50%;
+    left: 0; 
+    cursor: pointer;
+    margin-left:12px ;   
+}
+
 .contenedor{
     position: relative;
     width: 95%;
-    margin: 50px auto;
+    margin: 0 auto;
     height: 100vh;
     text-align: center;
     padding: 10px;
@@ -185,31 +298,23 @@ section{
     font-family: var(--roboto);   
 }
 /* TRATAMIENTOS */
+
 #tratamientos .contenedor{
-    background-image: url("../img/fondomainparedrosa.avif");
-    background-size: 100% 10%;
-    border: var(--border);
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    display: flex;
+    background: linear-gradient(90deg, var(--color-melocoton),var(--color-purpura));
     flex-direction: column;
-    justify-content: space-between;
     margin-top: 36px;
     width: 80%;
+    justify-content: space-evenly;
 }
-#tratamientos .contenedor div{
-    margin-top: 20px;
-}
-.terapias{
+#tratamientos .terapias{
     position: relative;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     width: 800px;
     height: 500px;
     margin: 0 auto;
-    gap: 25px;
+    background-image: url("../img/fondomainparedrosa.avif");
+    background-size: 100% 10%;
+
 }
 .cuadroTerapia{
     display: flex;
@@ -219,6 +324,13 @@ section{
     width: 30%;
     height: 150px;
     font-family: var(--roboto);
+    opacity: 0;
+    transform: translateX(-700px);
+    transition: opacity 3s ease, transform 4s ease;
+}
+.cuadroTerapia.aparecer{
+    opacity: 1;
+    transform: translateX(0);
 }
 .cuadroTerapia p{
     width: 200px;
@@ -288,7 +400,7 @@ section{
     box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 #experiencias .contenedorContenido{
     display: flex;
@@ -328,7 +440,6 @@ section{
 }
 .estrellas{
     text-align: left;
-
     margin-top: 10px;
 }
 .estrellas img{
@@ -369,10 +480,7 @@ section{
     box-shadow: var(--box-shadow);
 }
 #formNews{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 #formNews label{
     font-size: 26px;
@@ -391,21 +499,17 @@ section{
     text-align: center;
     font-weight: 500;
 }
-
+/* MAPA */
+#mapa{
+    flex-direction: column;
+}
+#mapa iframe{
+    margin-top: 15px;
+}
 /* CONTACTO */
 
-#contacto .contenedorContenido{
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-   
-}
 #formContacto{
-    margin-top: 25px;
     padding: 20px;
-    box-shadow: var(--box-shadow);
-    border: var(--border);
     background-color: var(--color-purpura);
     font-family: var(--roboto);
 }
@@ -421,51 +525,71 @@ section{
   margin-bottom: 10px;
   border: var(--border);
   border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  resize: none;
 }
 #formContacto button{
     margin-top: 15px;
 }
-
-
+.fa-arrow-up{
+    position: absolute;
+    bottom: 9%;
+    right: 15px;
+}
+.fa-arrow-up:hover{
+    transform: scale(1.1);
+}
+.cargaContenedor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
+.cargaContenedor.esconder{
+    top:110%;
+    opacity: 0;
+}
 /* FOOTER */
 footer {
     background-color: var(--color-gris);
     text-align: center;
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    padding-bottom: 50px;
+}
+.rrss{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    justify-content: start;
 }
-.izquierda{
-    width: 25%;
-    position: absolute;
-    top: 50px;
-    left: 10px;
+.rrss h3{
+    color:var(--color-melocoton);
 }
-.derecha{
-    width: 25%;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-}
-.iconos-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    padding-top: 20px;
 
+.iconos-footer {
+    flex-direction: column;
+    gap: 25px;
+    margin-left: 15px;
 }
 .sigueme {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-transform: capitalize;
     background-color: #fff;
     border-radius: 10px;
     padding: 10px;
-    gap: 5px;
     box-shadow:var(--box-shadow);
+    width: 160px;
+    cursor: pointer;
 }
 .fab {
     display: flex;
@@ -501,47 +625,43 @@ footer {
     color: #000;
 }
 
-footer p{
-    color:black;
+footer p:not(.sigueme p){
+    color:var(--color-melocoton);
 }
 footer .titulo{
     background-color: white;
     width: max-content;
-    margin: 50px auto 10px;
     border-radius: 10px;
     border: var(--border);
     box-shadow: var(--box-shadow);
     padding: 10px;
     color: var(--color-purpura);
 }
-footer .derechos{
-    margin-bottom: 25px;
+.informacion{
+    text-align: end;
+    margin-right: 15px;
 }
-.navegacion a{
-    display:inline-block;
-    color: var(--color-melocoton);
-    text-decoration: underline;
-    font-family: var(--roboto);
-    margin: 50px 15px 0 15px;
-}
-
-.navegacion a:hover{
-    transform: scale(1.1);
-}
-.metododepago{
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: 10px;
+footer .informacion a{
     display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: white;
-    width: 210px;
-    height: 70px;   
-    margin-top: 10px;
-    margin-bottom: 10px;
+    flex-direction: column;
+    color: #fff;
+    text-decoration: underline;
+    margin-top: 12px;
 }
-.metododepago img{
-    width: 150px;
-    margin: -30px;
+footer .informacion h3{
+    color: var(--color-melocoton);
+}
+.contactoFooter{
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+}
+.contactoFooter img{
+    background-color: white;
+    width: 180px;
+} 
+.rrss,
+.contactoFooter,
+.informacion{
+    margin-top: 15px;
 }
